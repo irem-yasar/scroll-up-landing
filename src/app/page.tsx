@@ -5,7 +5,7 @@ import Features from "./Features";
 import { features } from "process";
 import Privacy from "./PrivacyPolicy";
 import TechnicalSpecifications from "./TechnicalSpecifications";
-
+import Link from "next/link";
 const items = [
   { feature: "Çözünürlük", value: "256 × 640" },
   { feature: "Pixel Aralığı", value: "1.5 - 1.86 - 2.5 mm" },
@@ -145,9 +145,9 @@ export default function Home() {
       <Image
         src="/greenscreen.png"
         alt="Image"
-        width={"920"}
+        width={"1140"}
         height={"500"}
-        className="rounded-lg"
+        className="rounded-3xl"
       />
       <div className="flex flex-wrap items-center  xl:w-[1000px] h-[340px] justify-center mt-[64px] px-[14px] ">
         {sponsors.map((card, index) => (
@@ -368,7 +368,14 @@ export default function Home() {
               <div className="flex items-center mb-4 px-2">
                 <input type="checkbox" className="mr-2" />
                 <div className="font-[14px] pl-[20px]  ">
-                  Hizmet koşullarını ve Gizlilik Politikasını kabul ediyorum.
+                  <Link
+                    href={"/privacy"}
+                    target="_blank"
+                    className="text-[#443fde]"
+                  >
+                    Hizmet koşullarını ve Gizlilik Politikasını {""}
+                  </Link>
+                  kabul ediyorum.
                 </div>
               </div>
               <div className="px-2">
@@ -389,7 +396,133 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full h-[320px] bg-[#3bb24a] pt-[40px]"></div>
+      <div className="flex flex-col md:flex-row items-start justify-center min-h-screen bg-white px-4 mt-20">
+        <div className="w-full md:w-[65%] max-w-3xl md:mr-6 ">
+          <div className="p-6 ">
+            <div className="text-3xl text-[#161c24] font-archivo mb-6">
+              Bize Ulaşın
+            </div>
+            <div className="mb-4 font-extralight text-[#586272] leading-8 w-4/5 ">
+              Markanızı etkin bir şekilde ön plana çıkartmak için bizimle
+              iletişime geçin. Talebiniz üzerine, ekibimiz en kısa sürede
+              sizinle iletişim kuracaktır.
+            </div>
+            <div className="space-y-4 pb-[120px]">
+              <div className="flex flex-wrap -mx-2  ">
+                <div className="w-full md:w-1/2 px-2 mb-4">
+                  <label className="block text-[#246b49] mb-2 font-semibold ">
+                    Ad*
+                  </label>
+                  <input className="w-full p-2 border rounded" type="text" />
+                </div>
+                <div className="w-full md:w-1/2 px-2 mb-4">
+                  <label className="block text-[#246b49] mb-2 font-semibold">
+                    Soyad*
+                  </label>
+                  <input className="w-full p-2 border rounded" type="text" />
+                </div>
+                <div className="w-full md:w-1/2 px-2 mb-4">
+                  <label className="block text-[#246b49] mb-2 font-semibold">
+                    Telefon*
+                  </label>
+                  <input className="w-full p-2 border rounded" type="tel" />
+                </div>
+                <div className="w-full md:w-1/2 px-2 mb-4">
+                  <label className="block text-[#246b49] mb-2 font-semibold">
+                    E-posta*
+                  </label>
+                  <input className="w-full p-2 border rounded" type="email" />
+                </div>
+
+                <div className="w-full px-2 mb-4">
+                  <label className="block text-[#246b49] mb-2 font-semibold">
+                    Kısa Mesaj
+                  </label>
+                  <textarea className="w-full p-2 border  rounded"></textarea>
+                </div>
+              </div>
+              <div className="flex items-center mb-4 px-2">
+                <input type="checkbox" className="mr-2" />
+                <div className="font-[14px] pl-[20px]  ">
+                  <Link
+                    href={"/privacy"}
+                    target="_blank"
+                    className="text-[#443fde]"
+                  >
+                    Hizmet koşullarını ve Gizlilik Politikasını {""}
+                  </Link>
+                  kabul ediyorum.
+                </div>
+              </div>
+              <div className="px-2">
+                <button className="w-[200px] h-[60px] bg-[#3BB24A] text-white font-medium py-2 px-4 rounded-lg">
+                  Mesaj Gönder
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex w-[370px] h-[240px] justify-center items-center md:w-1/3 mt-8 md:mt-0 bg-[#f9fffc] p-6 rounded-lg shadow-lg">
+          <div className="text-[#111418] leading-8 font-sans text-[14px]">
+            <div>Bilkent Cyberpark Tepe Building B01</div>
+            <div>Çankaya, Ankara/Turkey</div>
+            <div>info@infinia.com</div>
+            <div>+90 (312) 265 05 09</div>
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-[320px] bg-[#3bb24a] pt-[40px]">
+        <div className="m-auto w-[1140px] ">
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width={160}
+            height={50}
+            className="mt-10"
+          ></Image>
+          <div className="border-b pt-10 border-white "></div>
+          <div className="flex py-[42px] justify-between">
+            <div className="font-sans font-[14px]  text-white">
+              Scrollup. All Rights Reserved, 2024.
+            </div>
+            <div className="flex gap-7 items-end ">
+              <Link
+                href={
+                  "https://www.linkedin.com/company/infiniadesignandinnovation/mycompany/"
+                }
+                target="_blank"
+              >
+                <Image
+                  src="/linkedin.png"
+                  width={22}
+                  height={22}
+                  alt="linkedin"
+                ></Image>
+              </Link>
+              <Link
+                href={"https://www.instagram.com/infiniaofficial/"}
+                target="_blank"
+              >
+                <Image
+                  src="/insta.png"
+                  alt="instagram"
+                  width={20}
+                  height={20}
+                ></Image>
+              </Link>
+
+              <Link href={"https://x.com/INFINIAofficial"} target="_blank">
+                <Image
+                  src="/twitter.png"
+                  alt="twitter"
+                  width={16}
+                  height={16}
+                ></Image>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
