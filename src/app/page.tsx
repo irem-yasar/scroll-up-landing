@@ -1,11 +1,10 @@
 import Image from "next/image";
-import wifiSymbol from "./wifi.png";
+import Navbar from "./navbar";
 import Card from "./Card";
 import Features from "./Features";
-import { features } from "process";
-import Privacy from "./PrivacyPolicy";
-import TechnicalSpecifications from "./TechnicalSpecifications";
 import Link from "next/link";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./Tabs";
+
 const items = [
   { feature: "Çözünürlük", value: "256 × 640" },
   { feature: "Pixel Aralığı", value: "1.5 - 1.86 - 2.5 mm" },
@@ -22,6 +21,7 @@ const items = [
   { feature: "Otomatik Açma/Kapama", value: "Evet" },
   { feature: "Güç Kablosu Uzunluğu", value: "3 m" },
 ];
+
 export default function Home() {
   const cards = [
     {
@@ -30,39 +30,45 @@ export default function Home() {
       imageUrl: "/wifi.png",
     },
     {
-      title: "UZAKTAN KONTROL EDİLEBİLİRLİK",
-      description: "Mobil uygulama aracılığıyla kolayca kontrol edilebilir",
-      imageUrl: "/wifi.png",
+      title: "GERÇEK ZAMANLI İÇERİK GÜNCELLEMESİ",
+      description: "Anlık olarak içerik değişikliği yapılabilir",
+      imageUrl: "/guncelleme.png",
     },
     {
-      title: "UZAKTAN KONTROL EDİLEBİLİRLİK",
-      description: "Mobil uygulama aracılığıyla kolayca kontrol edilebilir",
-      imageUrl: "/wifi.png",
+      title: "TAŞINABİLİRLİK KOLAYLIĞI",
+      description:
+        "Scrollup kolay taşınabilir kompakt tasarımı ile öne çıkmaktadır",
+      imageUrl: "/tasima.png",
     },
     {
-      title: "UZAKTAN KONTROL EDİLEBİLİRLİK",
-      description: "Mobil uygulama aracılığıyla kolayca kontrol edilebilir",
-      imageUrl: "/wifi.png",
+      title: "YÜKSEK ÇÖZÜNÜRLÜK KALİTESİ",
+      description:
+        "Scrollup-Foldable yüksek çözünürlüğü ile markanızı öne çıkartır",
+      imageUrl: "/cozunulurluk.png",
     },
     {
-      title: "UZAKTAN KONTROL EDİLEBİLİRLİK",
-      description: "Mobil uygulama aracılığıyla kolayca kontrol edilebilir",
-      imageUrl: "/wifi.png",
+      title: "OTOMATİK KURULUM",
+      description:
+        "Scrollup–Foldable otomatik katlanabilir mekanizması ise kolay kurulum sağlar",
+      imageUrl: "/kurulum.png",
     },
     {
-      title: "UZAKTAN KONTROL EDİLEBİLİRLİK",
-      description: "Mobil uygulama aracılığıyla kolayca kontrol edilebilir",
-      imageUrl: "/wifi.png",
+      title: "ÇEŞİTLİ İÇERİK SEÇENEKLERİ",
+      description:
+        "Fotoğraf, video, GIF veya animasyon tanıtım faaliyetlerine uyum sağlar",
+      imageUrl: "/icerik.png",
     },
     {
-      title: "UZAKTAN KONTROL EDİLEBİLİRLİK",
-      description: "Mobil uygulama aracılığıyla kolayca kontrol edilebilir",
-      imageUrl: "/wifi.png",
+      title: "ÖZELLEŞTİRİLEBİLİR ÇALMA LİSTESİ",
+      description:
+        "İhtiyaca yönelik akış oluşturma ve anlık güncelleyebilme seçeneği sunar",
+      imageUrl: "/playlist.png",
     },
     {
-      title: "UZAKTAN KONTROL EDİLEBİLİRLİK",
-      description: "Mobil uygulama aracılığıyla kolayca kontrol edilebilir",
-      imageUrl: "/wifi.png",
+      title: "GÖZ ALICI TASARIM",
+      description:
+        "Teknoloji ve tasarımı bir araya getiren dikkat çekici ürün görseli",
+      imageUrl: "/tasarim.png",
     },
   ];
   const featureTexts = [
@@ -80,6 +86,7 @@ export default function Home() {
     {
       name: "tubitak",
       logoUrl: "/tubitak.png",
+      smallImage: true,
     },
     {
       name: "wisersense",
@@ -96,6 +103,7 @@ export default function Home() {
     {
       name: "fenerbahce",
       logoUrl: "/fenerbahce.png",
+      smallImage: true,
     },
     {
       name: "cocacola",
@@ -129,7 +137,11 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center font-archivo bg-white">
-      <div className="mt-10  px-10 flex h-44 flex-col lg:flex-row lg:items-center lg:justify-between w-[1200px]">
+      <Navbar />
+      <div
+        id="modern-view"
+        className="px-10 flex h-44 flex-col lg:flex-row lg:items-center lg:justify-between mt-40 w-[1200px]"
+      >
         <div className="flex flex-col w-[535px] text-5xl">
           <h1 className="font-bold mb-2">Taşınabilir LED Ekranla</h1>
           <h2 className="font-extralight mb-4">Modern Görüntü Deneyimi</h2>
@@ -149,15 +161,23 @@ export default function Home() {
         height={"500"}
         className="rounded-3xl"
       />
-      <div className="flex flex-wrap items-center  xl:w-[1000px] h-[340px] justify-center mt-[64px] px-[14px] ">
+      <div className="flex flex-wrap items-center w-[1000px] h-[240px] justify-center mt-[64px] px-[14px] ">
         {sponsors.map((card, index) => (
-          <div className="w-1/4  p-2">
-            <Card key={index} color="white" imageUrl={card.logoUrl} onlyImage />
+          <div className="w-1/4  p-2" key={index}>
+            <Card
+              key={index}
+              color="white"
+              imageUrl={card.logoUrl}
+              onlyImage
+              smallImage={card.smallImage}
+            />
           </div>
         ))}
       </div>
-
-      <div className=" flex justify-between w-full h-[80vh] mt-80 ">
+      <div
+        id="scrollupapp"
+        className=" flex justify-between w-full h-[80vh] mt-80 "
+      >
         <div className="flex flex-col gap-5 py-24 px-40 text-white  w-[60%] h-full rounded-r-[40px] rounded-tl-none rounded-bl-none bg-[#3bb24a]">
           <h3 className="font-bold leading-tight w-[600] h-[440] text-[40px]">
             Scrollup Uygulama
@@ -171,7 +191,7 @@ export default function Home() {
 
           <div className="gap-16 ml-8 flex flex-col w-[600] ">
             {featureTexts.map((card, index) => (
-              <Features text={card.text} />
+              <Features key={index} text={card.text} />
             ))}
           </div>
         </div>
@@ -181,10 +201,16 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-10 w-[1200px] flex flex-col pt-14 text-[40px] text-left">
+      <div
+        id="overview"
+        className="px-10 w-[1200px] flex flex-col pt-14 text-[40px] text-left"
+      >
         <div className="font-bold ">Her Zaman, Her Yerde</div>
         <div className=" font-extralight ">Dikkat Çeken Taşınabilir Ekran</div>
-        <div className=" font-sans font-thin text-[16px] leading-8 w-3/5">
+        <div
+          id="features"
+          className=" font-sans font-thin text-[16px] leading-8 w-3/5"
+        >
           Her detayı, görsel etkinlikleri maksimize etmek üzere düşünülmüş bu
           ürünler, yüksek çözünürlükleri ile konumlandığı ortamda dikkat çeker
           ve sizin mesajınızı en etkin şekilde vermenize destek olur.
@@ -192,7 +218,7 @@ export default function Home() {
       </div>
       <div className="flex flex-wrap items-center justify-center xl:w-[1160px] mt-4 ">
         {cards.map((card, index) => (
-          <div className="w-1/4 p-5">
+          <div className="w-1/4 h-[300px] p-5" key={index}>
             <Card
               key={index}
               title={card.title}
@@ -248,7 +274,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-x-5 h-[600px] w-[1140px] mt-16">
+      <div
+        id="usage"
+        className="flex items-center justify-center gap-x-5 h-[600px] w-[1140px] mt-16"
+      >
         <div className=" w-1/2 h-full relative">
           <Image
             src="/Adv4.png"
@@ -269,7 +298,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className=" flex justify-between w-full h-[80vh] mb-80 mt-20 ">
+      <div
+        id="technical"
+        className=" flex justify-between w-full h-[80vh] mb-80 mt-20 "
+      >
         <div className="flex flex-col gap-5 py-4 pt-20 pl-20 text-white  w-[60%] h-[1000px] rounded-r-[40px] rounded-tl-none rounded-bl-none bg-[#3bb24a]">
           <div className=" p-6 rounded-lg  max-w-4xl flex">
             <div className="mr-10 pr-44 w-full items-start">
@@ -309,168 +341,218 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-start justify-center min-h-screen bg-white px-4 mt-20">
-        <div className="w-full md:w-[65%] max-w-3xl md:mr-6 ">
-          <div className="p-6 ">
-            <div className="text-3xl text-[#161c24] font-archivo mb-6">
-              İş Ortağımız Olun
-            </div>
-            <div className="mb-4 font-extralight text-[#586272] leading-8 w-4/5 ">
-              Scrollup ile iş ortaklığı kurarak yenilikçi görsel iletişimin bir
-              parçası olmak için lütfen formu doldurun. İletişim bilgileriniz
-              üzerinden ekibimiz en kısa sürede sizinle iletişim kuracaktır.
-            </div>
-            <div className="space-y-4 pb-[120px]">
-              <div className="flex flex-wrap -mx-2  ">
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold ">
-                    Yetkilinin Adı*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="text" />
-                </div>
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    Yetkilinin Soyadı*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="text" />
-                </div>
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    Telefon*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="tel" />
-                </div>
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    E-posta*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="email" />
-                </div>
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    Firma Adı*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="text" />
-                </div>
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    İl
-                  </label>
-                  <input className="w-full p-2 border rounded" type="text" />
-                </div>
-                <div className="w-full px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    Kısa Mesaj
-                  </label>
-                  <textarea className="w-full p-2 border  rounded"></textarea>
+      <div id="contact" className="flex xl:w-[1000px] justify-center mt-20">
+        <Tabs defaultValue="account" className="flex flex-col items-center">
+          <TabsList className="flex p-8 bg-gray-100 items-center justify-center gap-12 ">
+            <TabsTrigger
+              className=" text-black p-3 text-xl px-6"
+              value="account"
+            >
+              İŞ ORTAKLIĞI
+            </TabsTrigger>
+            <TabsTrigger className=" text-black p-3 text-xl" value="password">
+              TEKLİF AL
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="account">
+            <div className="flex flex-col md:flex-row items-start justify-center bg-white px-4 mt-20">
+              <div className="w-full md:mr-6 ">
+                <div className="p-6 ">
+                  <div className="text-3xl text-[#161c24] font-archivo mb-6">
+                    Bize Ulaşın
+                  </div>
+                  <div className="mb-4 font-extralight text-[#586272] leading-8 w-4/5 ">
+                    Markanızı etkin bir şekilde ön plana çıkartmak için bizimle
+                    iletişime geçin. Talebiniz üzerine, ekibimiz en kısa sürede
+                    sizinle iletişim kuracaktır.
+                  </div>
+                  <div className="space-y-4 pb-[120px]">
+                    <div className="flex flex-wrap -mx-2  ">
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold ">
+                          Ad*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="text"
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          Soyad*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="text"
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          Telefon*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="tel"
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          E-posta*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="email"
+                        />
+                      </div>
+
+                      <div className="w-full px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          Kısa Mesaj
+                        </label>
+                        <textarea className="w-full p-2 border  rounded"></textarea>
+                      </div>
+                    </div>
+                    <div className="flex items-center mb-4 px-2">
+                      <input type="checkbox" className="mr-2" />
+                      <div className="font-[14px] pl-[20px]  ">
+                        <Link
+                          href={"/privacy"}
+                          target="_blank"
+                          className="text-[#443fde]"
+                        >
+                          Hizmet koşullarını ve Gizlilik Politikasını {""}
+                        </Link>
+                        kabul ediyorum.
+                      </div>
+                    </div>
+                    <div className="px-2">
+                      <button className="w-[200px] h-[60px] bg-[#3BB24A] text-white font-medium py-2 px-4 rounded-lg">
+                        Mesaj Gönder
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-center mb-4 px-2">
-                <input type="checkbox" className="mr-2" />
-                <div className="font-[14px] pl-[20px]  ">
-                  <Link
-                    href={"/privacy"}
-                    target="_blank"
-                    className="text-[#443fde]"
-                  >
-                    Hizmet koşullarını ve Gizlilik Politikasını {""}
-                  </Link>
-                  kabul ediyorum.
+              <div className="flex w-[370px] h-[240px] justify-center items-center md:w-1/2 mt-8 md:mt-0 bg-[#f9fffc] p-6 rounded-lg shadow-lg">
+                <div className="text-[#111418] leading-8 font-sans text-[14px]">
+                  <div>Bilkent Cyberpark Tepe Building B01</div>
+                  <div>Çankaya, Ankara/Turkey</div>
+                  <div>info@infinia.com</div>
+                  <div>+90 (312) 265 05 09</div>
                 </div>
               </div>
-              <div className="px-2">
-                <button className="w-[200px] h-[60px] bg-[#3BB24A] text-white font-medium py-2 px-4 rounded-lg">
-                  Mesaj Gönder
-                </button>
+            </div>
+          </TabsContent>
+          <TabsContent value="password">
+            <div className="flex flex-col md:flex-row items-start justify-center min-h-screen bg-white px-4 mt-20">
+              <div className="w-full md:mr-6 ">
+                <div className="p-6 ">
+                  <div className="text-3xl text-[#161c24] font-archivo mb-6">
+                    İş Ortağımız Olun
+                  </div>
+                  <div className="mb-4 font-extralight text-[#586272] leading-8 w-4/5 ">
+                    Scrollup ile iş ortaklığı kurarak yenilikçi görsel
+                    iletişimin bir parçası olmak için lütfen formu doldurun.
+                    İletişim bilgileriniz üzerinden ekibimiz en kısa sürede
+                    sizinle iletişim kuracaktır.
+                  </div>
+                  <div className="space-y-4 pb-[120px]">
+                    <div className="flex flex-wrap -mx-2  ">
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold ">
+                          Yetkilinin Adı*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="text"
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          Yetkilinin Soyadı*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="text"
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          Telefon*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="tel"
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          E-posta*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="email"
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          Firma Adı*
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="text"
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          İl
+                        </label>
+                        <input
+                          className="w-full p-2 border rounded"
+                          type="text"
+                        />
+                      </div>
+                      <div className="w-full px-2 mb-4">
+                        <label className="block text-[#246b49] mb-2 font-semibold">
+                          Kısa Mesaj
+                        </label>
+                        <textarea className="w-full p-2 border  rounded"></textarea>
+                      </div>
+                    </div>
+                    <div className="flex items-center mb-4 px-2">
+                      <input type="checkbox" className="mr-2" />
+                      <div className="font-[14px] pl-[20px]  ">
+                        <Link
+                          href={"/privacy"}
+                          target="_blank"
+                          className="text-[#443fde]"
+                        >
+                          Hizmet koşullarını ve Gizlilik Politikasını {""}
+                        </Link>
+                        kabul ediyorum.
+                      </div>
+                    </div>
+                    <div className="px-2">
+                      <button className="w-[200px] h-[60px] bg-[#3BB24A] text-white font-medium py-2 px-4 rounded-lg">
+                        Mesaj Gönder
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex w-[370px] h-[240px] justify-center items-center md:w-1/2 mt-8 md:mt-0 bg-[#f9fffc] p-6 rounded-lg shadow-lg">
+                <div className="text-[#111418] leading-8 font-sans text-[14px]">
+                  <div>Bilkent Cyberpark Tepe Building B01</div>
+                  <div>Çankaya, Ankara/Turkey</div>
+                  <div>info@infinia.com</div>
+                  <div>+90 (312) 265 05 09</div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="flex w-[370px] h-[240px] justify-center items-center md:w-1/3 mt-8 md:mt-0 bg-[#f9fffc] p-6 rounded-lg shadow-lg">
-          <div className="text-[#111418] leading-8 font-sans text-[14px]">
-            <div>Bilkent Cyberpark Tepe Building B01</div>
-            <div>Çankaya, Ankara/Turkey</div>
-            <div>info@infinia.com</div>
-            <div>+90 (312) 265 05 09</div>
-          </div>
-        </div>
+          </TabsContent>
+        </Tabs>
       </div>
 
-      <div className="flex flex-col md:flex-row items-start justify-center min-h-screen bg-white px-4 mt-20">
-        <div className="w-full md:w-[65%] max-w-3xl md:mr-6 ">
-          <div className="p-6 ">
-            <div className="text-3xl text-[#161c24] font-archivo mb-6">
-              Bize Ulaşın
-            </div>
-            <div className="mb-4 font-extralight text-[#586272] leading-8 w-4/5 ">
-              Markanızı etkin bir şekilde ön plana çıkartmak için bizimle
-              iletişime geçin. Talebiniz üzerine, ekibimiz en kısa sürede
-              sizinle iletişim kuracaktır.
-            </div>
-            <div className="space-y-4 pb-[120px]">
-              <div className="flex flex-wrap -mx-2  ">
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold ">
-                    Ad*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="text" />
-                </div>
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    Soyad*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="text" />
-                </div>
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    Telefon*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="tel" />
-                </div>
-                <div className="w-full md:w-1/2 px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    E-posta*
-                  </label>
-                  <input className="w-full p-2 border rounded" type="email" />
-                </div>
-
-                <div className="w-full px-2 mb-4">
-                  <label className="block text-[#246b49] mb-2 font-semibold">
-                    Kısa Mesaj
-                  </label>
-                  <textarea className="w-full p-2 border  rounded"></textarea>
-                </div>
-              </div>
-              <div className="flex items-center mb-4 px-2">
-                <input type="checkbox" className="mr-2" />
-                <div className="font-[14px] pl-[20px]  ">
-                  <Link
-                    href={"/privacy"}
-                    target="_blank"
-                    className="text-[#443fde]"
-                  >
-                    Hizmet koşullarını ve Gizlilik Politikasını {""}
-                  </Link>
-                  kabul ediyorum.
-                </div>
-              </div>
-              <div className="px-2">
-                <button className="w-[200px] h-[60px] bg-[#3BB24A] text-white font-medium py-2 px-4 rounded-lg">
-                  Mesaj Gönder
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex w-[370px] h-[240px] justify-center items-center md:w-1/3 mt-8 md:mt-0 bg-[#f9fffc] p-6 rounded-lg shadow-lg">
-          <div className="text-[#111418] leading-8 font-sans text-[14px]">
-            <div>Bilkent Cyberpark Tepe Building B01</div>
-            <div>Çankaya, Ankara/Turkey</div>
-            <div>info@infinia.com</div>
-            <div>+90 (312) 265 05 09</div>
-          </div>
-        </div>
-      </div>
       <div className="w-full h-[320px] bg-[#3bb24a] pt-[40px]">
         <div className="m-auto w-[1140px] ">
           <Image
@@ -510,7 +592,6 @@ export default function Home() {
                   height={20}
                 ></Image>
               </Link>
-
               <Link href={"https://x.com/INFINIAofficial"} target="_blank">
                 <Image
                   src="/twitter.png"

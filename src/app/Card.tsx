@@ -7,6 +7,7 @@ interface CardProps {
   imageUrl: string;
   color: "white" | "grey";
   onlyImage?: boolean;
+  smallImage?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -14,6 +15,7 @@ const Card: React.FC<CardProps> = ({
   description,
   imageUrl,
   color,
+  smallImage = false,
   onlyImage = false,
 }) => {
   const getCardColor = () => {
@@ -22,7 +24,6 @@ const Card: React.FC<CardProps> = ({
         return "bg-white text-black";
       case "grey":
         return "bg-[#F9F9FB] text-black";
-
       default:
         return "";
     }
@@ -32,10 +33,15 @@ const Card: React.FC<CardProps> = ({
     <div className={`flex h-full w-full rounded-md p-4 ${getCardColor()}`}>
       <div
         className={`h-full ${
-          onlyImage ? "w-full flex items-center  justify-center " : " w-1/3"
+          onlyImage ? "w-full flex items-center justify-center" : "w-1/3"
         } justify-center pt-2`}
       >
-        <Image src={imageUrl} alt="Image" width={150} height={100} />
+        <Image
+          src={imageUrl}
+          alt="Image"
+          width={smallImage ? 70 : 130}
+          height={smallImage ? 100 : 100}
+        />
       </div>
       {title && description && (
         <div className="flex flex-col w-2/3 font-sans px-1 justify-center">
