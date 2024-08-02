@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Navbar from "../navbar";
 export default function Privacy() {
   return (
     <main className="flex min-h-screen flex-col font-archivo bg-white">
-      <div className="flex flex-col items-center w-full h-[300px] pt-[64px] pb-[0px] px-[3%] bg-[#246b49] ">
+      <Navbar />
+      <div className="flex flex-col mt-16 items-center w-full h-[300px] pt-[64px] pb-[0px] px-[3%] bg-[#246b49] ">
         <div className="text-white flex justify-center text-center font-bold leading-5 text-[48px] font-sans mb-14">
           GİZLİLİK POLİTİKASI
         </div>

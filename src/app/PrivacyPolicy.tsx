@@ -1,28 +1,28 @@
-import Image from "next/image";
-
-import TechnicalSpecifications from "./TechnicalSpecifications";
+import Link from "next/link";
+import Navbar from "./navbar";
 
 export default function Privacy() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center font-archivo bg-white">
-      <div className="min-h-screen bg-gray-100">
-        <header className="bg-green-800 text-white py-6">
-          <div className="container mx-auto text-center">
-            <h1 className="text-3xl font-bold">GIZLILIK POLITIKASI</h1>
-            <p className="mt-2">
-              All graphical assets in this template are licensed for personal
-              and commercial use. If you'd like to use a specific asset, please
-              check the license below
-            </p>
+    <main className="flex min-h-screen flex-col font-archivo bg-white">
+      <Navbar />
+      <div className="flex flex-col mt-16 items-center w-full h-[300px] pt-[64px] pb-[0px] px-[3%] bg-[#246b49]">
+        <div className="text-white flex justify-center text-center font-bold leading-5 text-[48px] font-sans mb-14">
+          GİZLİLİK POLİTİKASI
+        </div>
+        <div className="text-white block w-[400px] justify-center text-center items-center font-sans text-[16px] leading-7">
+          All graphical assets in this template are licensed for personal and
+          commercial use. If you’d like to use a specific asset, please check
+          the license below.
+        </div>
+      </div>
+      <div className="w-full flex py-[64px] px-[17%]">
+        <div className="flex flex-col  p-[24px] border border-[#e4e8f1]">
+          <div className="font-archivo text-[32px] font-bold text-[#030407] leading-10 mb-2">
+            KİŞİSEL VERİLERİN KORUNMASI KANUNU KAPSAMINDA GENEL BİLGİLENDİRME VE
+            AYDINLATMA METNİ
           </div>
-        </header>
-        <main className="container mx-auto my-10 p-6 bg-white shadow-md">
-          <h2 className="text-2xl font-bold mb-4">
-            Kişisel Verilerin Korunması Kanunu Kapsamında Genel Bilgilendirme ve
-            Aydınlatma Metni
-          </h2>
-          <p>
-            İşbu bilgilendirme ve aydınlatma metni INFINIA' nın, 24/3/2016
+          <div className="mb-10 font-sans text-[16px] leading-10 text-[#3e404c]">
+            İşbu bilgilendirme ve aydınlatma metni INFINIA’ nın, 24/3/2016
             tarihinde kabul edilen 6698 sayılı Kişisel Verilerin Korunması
             Kanunu ve ilgili sair mevzuat kapsamında, kişisel verilerin hukuka
             uygun olarak toplanması, elde edilmesi, saklanması, paylaşılması ve
@@ -32,8 +32,8 @@ export default function Privacy() {
             veriler açısından ilgili kanunun 10. Maddesi gereği aydınlatma
             yükümlülüğümüzün yerine getirilmesi amacıyla bu bilgilendirme metni
             bilgi ve incelemenize sunulmaktadır.
-          </p>
-        </main>
+          </div>
+        </div>
       </div>
     </main>
   );
