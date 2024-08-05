@@ -182,9 +182,9 @@ export default function Home() {
       </div>
       <div
         id="scrollupapp"
-        className="flex flex-col lg:flex-row justify-between w-full max-w-[1200px] h-auto lg:h-[80vh] mt-20 lg:mt-80 px-4"
+        className="flex flex-col lg:flex-row justify-between w-full h-auto lg:h-[80vh] mt-20 lg:mt-80"
       >
-        <div className="flex flex-col gap-5 py-12 px-6 lg:px-40 text-white w-full lg:w-[60%] h-full rounded-r-[40px] rounded-tl-none rounded-bl-none bg-[#3bb24a]">
+        <div className="justify-center flex flex-col gap-5 py-12 px-6 lg:px-40 text-white w-full lg:w-[60%] h-full rounded-r-[40px] rounded-tl-none rounded-bl-none bg-[#3bb24a]">
           <h3 className="font-bold leading-tight text-[24px] lg:text-[40px]">
             Scrollup Uygulama
           </h3>
