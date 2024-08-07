@@ -323,9 +323,9 @@ export default function Home() {
 
       <div
         id="technical"
-        className="flex flex-col lg:flex-row justify-between w-full h-auto  mb-20 lg:mb-80 mt-20 px-4"
+        className="flex flex-col lg:flex-row justify-between w-full h-auto mb-20 lg:mb-20 mt-20"
       >
-        <div className="flex flex-col gap-5 py-4 pt-20 pl-6 lg:pl-20 text-white w-full lg:w-[60%] rounded-r-[40px] rounded-tl-none rounded-bl-none bg-[#3bb24a]">
+        <div className="flex flex-col gap-5 py-4 pt-20 text-white w-full lg:w-[60%] rounded-r-[40px] rounded-tl-none rounded-bl-none bg-[#3bb24a]">
           <div className="p-6 rounded-lg max-w-4xl flex">
             <div className="mr-10 w-full">
               <h1 className="text-3xl lg:text-4xl font-bold mb-8">
@@ -377,14 +377,11 @@ export default function Home() {
           defaultValue="account"
           className="flex flex-col items-center w-full"
         >
-          <TabsList className="flex p-8 bg-gray-100 items-center justify-center gap-12">
-            <TabsTrigger
-              className="text-black p-3 text-xl px-6"
-              value="account"
-            >
+          <TabsList className="flex text-md sm:text-xl p-8 bg-gray-100 items-center justify-center sm:gap-12">
+            <TabsTrigger className="text-black p-3 px-6" value="account">
               İŞ ORTAKLIĞI
             </TabsTrigger>
-            <TabsTrigger className="text-black p-3 text-xl" value="password">
+            <TabsTrigger className="text-black p-3" value="password">
               TEKLİF AL
             </TabsTrigger>
           </TabsList>
@@ -471,7 +468,9 @@ export default function Home() {
                 <div className="text-[#111418] leading-8 font-sans text-[14px]">
                   <div>Bilkent Cyberpark Tepe Building B01</div>
                   <div>Çankaya, Ankara/Turkey</div>
-                  <div>info@infinia.com</div>
+                  <Link href={"mailto:info@infinia.com.tr"} target="_blank">
+                    <div>info@infinia.com.tr</div>
+                  </Link>
                   <div>+90 (312) 265 05 09</div>
                 </div>
               </div>
@@ -578,7 +577,9 @@ export default function Home() {
                 <div className="text-[#111418] leading-8 font-sans text-[14px]">
                   <div>Bilkent Cyberpark Tepe Building B01</div>
                   <div>Çankaya, Ankara/Turkey</div>
-                  <div>info@infinia.com</div>
+                  <Link href={"mailto:info@infinia.com.tr"} target="_blank">
+                    <div>info@infinia.com.tr</div>
+                  </Link>
                   <div>+90 (312) 265 05 09</div>
                 </div>
               </div>

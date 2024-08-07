@@ -1,26 +1,28 @@
 import Link from "next/link";
 import Navbar from "../navbar";
+
 export default function Privacy() {
   return (
     <main className="flex min-h-screen flex-col font-archivo bg-white">
       <Navbar />
-      <div className="flex flex-col mt-16 items-center w-full h-[300px] pt-[64px] pb-[0px] px-[3%] bg-[#246b49] ">
-        <div className="text-white flex justify-center text-center font-bold leading-5 text-[48px] font-sans mb-14">
+      <div className="flex flex-col mt-16 items-center w-full h-auto pt-16 pb-4 px-4 bg-[#246b49]">
+        <div className="text-white text-center font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
           GİZLİLİK POLİTİKASI
         </div>
-        <div className="text-white block w-[400px] justify-center text-center items-center font-sans text-[16px] leading-7">
+        <div className="text-white max-w-md text-center font-sans text-sm sm:text-base md:text-lg leading-relaxed">
           All graphical assets in this template are licensed for personal and
           commercial use. If you’d like to use a specific asset, please check
           the license below.
         </div>
       </div>
-      <div className="w-full flex py-[64px] px-[17%]">
-        <div className="flex flex-col  p-[24px] border border-[#e4e8f1]">
-          <div className="font-archivo text-[32px] font-bold text-[#030407] leading-10 mb-2">
+      <div className="w-full flex justify-center py-16  md:px-16">
+        {/* Added center alignment and padding */}
+        <div className="flex flex-col  max-w-3xl p-6 border border-[#e4e8f1]">
+          <div className="font-archivo text-2xl sm:text-3xl md:text-4xl font-bold text-[#030407] leading-snug mb-4">
             KİŞİSEL VERİLERİN KORUNMASI KANUNU KAPSAMINDA GENEL BİLGİLENDİRME VE
             AYDINLATMA METNİ
           </div>
-          <div className="mb-10 font-sans text-[16px] leading-10 text-[#3e404c]">
+          <div className="mb-10 font-sans text-base sm:text-lg md:text-xl leading-8 text-[#3e404c]">
             İşbu bilgilendirme ve aydınlatma metni INFINIA’ nın, 24/3/2016
             tarihinde kabul edilen 6698 sayılı Kişisel Verilerin Korunması
             Kanunu ve ilgili sair mevzuat kapsamında, kişisel verilerin hukuka
@@ -32,10 +34,10 @@ export default function Privacy() {
             yükümlülüğümüzün yerine getirilmesi amacıyla bu bilgilendirme metni
             bilgi ve incelemenize sunulmaktadır.
           </div>
-          <div className="font-archivo text-[24px] font-bold text-[#030407] leading-10">
+          <div className="font-archivo text-xl sm:text-2xl font-bold text-[#030407] leading-snug mb-4">
             VERİ SORUMLUSU TANIMI ve VERİ SORUMLUSU KİMLİĞİ
           </div>
-          <div className="mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+          <div className="mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
             6698 Sayılı Kanun’un 3. Maddesinde tanımlandığı hali ile veri
             sorumlusu, “Kişisel verilerin işleme amaçlarını ve vasıtalarını
             belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden
@@ -51,10 +53,10 @@ export default function Privacy() {
             Veri Sorumlusu, INFINIA Mühendislik A.Ş. Üniversiteler Mah.
             Cyberpark Tepe Binası Kat -1 No:B01 Çankaya/ANKARA
           </div>
-          <div className="font-archivo text-[24px] font-bold text-[#030407] leading-10 mb-2">
+          <div className="font-archivo text-xl sm:text-2xl font-bold text-[#030407] leading-snug mb-4">
             KİŞİSEL VERİLERİN İŞLENMESİNİN HUKUKİ DAYANAK VE SEBEPLERİ
           </div>
-          <div className="mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+          <div className="mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
             6698 Sayılı Kişisel Verilerin Korunması Hakkında Kanun’da açıkça
             tanımlanmış bulunan kişisel verilerin elde edilmesi halinde bu
             veriler yine ilgili Kanun’un 5. Ve 6. Maddesi kapsamında
@@ -64,7 +66,7 @@ export default function Privacy() {
             rızanız talep edilecektir. Kanungereği bu hukuki amaçlar;
             <br />
             <div>
-              <ul className="list-disc mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+              <ul className="list-disc mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
                 <li className="pl-4">
                   Bir hakkın tesisi, kullanılması veya korunması için verilerin
                   işlenmesinin zorunlu olması halleridirYetkili kamu kurum ve
@@ -112,7 +114,7 @@ export default function Privacy() {
                 </li>
               </ul>
             </div>
-            <div className="mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+            <div className="mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
               Yukarıda sıralamış olduğumuz amaçlar dışında kalan Kişisel
               Veriler, veri ilgilisinin kişinin açık rızasının alınması
               suretiyle işlenecektir. Kanun Çerçevesinde edinilen ve işlenecek
@@ -129,16 +131,16 @@ export default function Privacy() {
               ve/veya açık rızanın mevcut olduğu sürece elde edinilebilecek,
               depolanabilecek, güncellenebilecek ve işlenebilecektir.
             </div>
-            <div className="font-archivo text-[24px] font-bold text-[#030407] leading-10 mb-2">
+            <div className="font-archivo text-xl sm:text-2xl font-bold text-[#030407] leading-snug mb-4">
               KİŞİSEL VERİLERİN TOPLANMASI, İŞLENMESİNİN AMACI
             </div>
-            <div className="mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+            <div className="mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
               Web sitemiz aracılığıyla ya da yukarıda bahsi geçen diğer yollar
               ile tarafımızca edinilen Kişisel Verileriniz niteliğine göre
               aşağıdaki amaçlarla tarafımızca işlenecektir; <br />
             </div>
             <div>
-              <ul className="list-disc mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+              <ul className="list-disc mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
                 <li className="pl-4">
                   INFINIA olarak sunduğumuz ürün ve hizmetlerimizden ve internet
                   sitemizden müşterilerimizi/ziyaretçilerimizi faydalandırmak
@@ -210,14 +212,14 @@ export default function Privacy() {
                 </li>
               </ul>
             </div>
-            <div className="font-archivo text-[24px] font-bold text-[#030407] leading-10 mb-2">
+            <div className="font-archivo text-xl sm:text-2xl font-bold text-[#030407] leading-snug mb-4">
               VERİ SAHİBİNİN HAKLARI
             </div>
-            <div className="mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+            <div className="mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
               Kişisel verisi işlenen gerçek/tüzelkişilerin KVKK’ nın 11. Maddesi
               uyarınca sahip olduğu haklar aşağıdaki gibidir; <br />
             </div>
-            <ul className="list-disc mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+            <ul className="list-disc mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
               <li className="pl-4">
                 Kişisel veri işlenip işlenmediğini öğrenme,
               </li>
@@ -252,7 +254,7 @@ export default function Privacy() {
               </li>
             </ul>
           </div>
-          <div className="mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+          <div className="mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
             Yukarıda belirtilen hakların kullanılması için ayırt edici
             kimlik/kayıt bilgilerin ve kullanılmak istenilen hakkın ve bu hususa
             yönelik açıklamaların veri sorumlusuna başvuru formu vasıtasıyla
@@ -268,10 +270,10 @@ export default function Privacy() {
             adresine “Kişisel Verileri Koruma Kanunu Kapsamında Bilgi Talebi”
             başlığı ile iletilmesi halinde işleme alınacaktır.
           </div>
-          <div className="font-archivo text-[24px] font-bold text-[#030407] leading-10 mb-2">
-            VERİ SAHİBİNİN TALEPLERİNİNDEĞERLENDİRİLMESİ
+          <div className="font-archivo text-xl sm:text-2xl font-bold text-[#030407] leading-snug mb-4">
+            VERİ SAHİBİNİN TALEPLERİNİN DEĞERLENDİRİLMESİ
           </div>
-          <div className="mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+          <div className="mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
             6698 Sayılı KVK Kanunu’nun 13.Maddesinin 1. Fıkrası gereğince,
             yukarıda belirtilen hakların kullanılması ile ilgili iletilen
             talepler, yazılı veya Kişisel Verileri Koruma Kurulu’nun belirlediği
@@ -281,10 +283,10 @@ export default function Privacy() {
             alınabilir.)sonuçlandırılacak ve bize ilettiğiniz iletişim bilginiz
             üzerinden geri dönüş sağlanacaktır.
           </div>
-          <div className="font-archivo text-[24px] font-bold text-[#030407] leading-10 mb-2">
+          <div className="font-archivo text-xl sm:text-2xl font-bold text-[#030407] leading-snug mb-4">
             ÜÇÜNCÜ TARAF WEB SİTELERİNE LİNKLER(BAĞLANTILAR)
           </div>
-          <div className="mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+          <div className="mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
             INFINIA Mühendislik A.Ş. (“INFINIA”)olarak 6698 sayılı Kişisel
             Verilerin Korunması Kanunu (“Kanun”) kapsamında “veri sorumlusu”
             sıfatına sahiptir. İşbu Açık Rıza Metni ile Kanun’da yer alan
@@ -297,8 +299,8 @@ export default function Privacy() {
             durumlarda da Aydınlatma Metni’nde belirtilen temel ilkelere uygun
             veri işlenmektedir. Buna göre kişisel veriler, INFINIA tarafından;
           </div>
-          <div className=" font-sans text-[16px] leading-10 font-light text-[#3e404c]">
-            <ul className="list-disc mb-10 font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+          <div className="font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
+            <ul className="list-disc mb-10 font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
               <li className="pl-4">
                 Daha verimli ve iyi hizmet alabilmek adına beğenilerime,
                 hobilerime, kişisel zevklerime, ziyaret ettiğim sayfalara,
@@ -321,7 +323,7 @@ export default function Privacy() {
                 Aydınlatma Metni’nde belirtilen taraflarla paylaşılabilecektir.
               </li>
             </ul>
-            <div className="font-sans text-[16px] leading-10 font-light text-[#3e404c]">
+            <div className="font-sans text-base sm:text-lg leading-8 font-light text-[#3e404c]">
               <br /> Kişisel veri talep formu için {""}
               <span className="text-[#443fde]">
                 <Link
